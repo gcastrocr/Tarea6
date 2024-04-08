@@ -258,8 +258,7 @@ function tabla_datos(){
 
   let salario=parseFloat(document.getElementsByName("salario")[0].value).toFixed(2);
 
-
-  if(parseFloat(salario).toFixed(2) < parseFloat(salariominimo).toFixed(2)){
+  if(parseFloat(salario).toFixed(2) > parseFloat(salariominimo).toFixed(2)){
     document.getElementById("revision_salario").innerHTML="Monto de salario insuficiente para el crédito";
   }
   else{
@@ -300,21 +299,57 @@ function interes(){
   const amortizacion=[];
   const saldo=[];
 
-  for(var i = 1;i<8;i++){
+  for(var i = 1;i<=8;i++){
     vInteres=(amortiza*(tasaMensual/100));
     amortiza=amortiza-(pagoMensual-vInteres);
     interes[i]=vInteres;
-    amortizacion[i]=amortiza;
-    saldo[i]=montoSolicitado-amortiza;
+    amortizacion[i]=pagoMensual-vInteres;
+    saldo[i]=amortiza;
   } 
 
-  alert(interes);
+  /*alert(interes);
   alert(amortizacion);
-  alert(saldo);
+  alert(saldo);*/
 
   document.getElementById("p1").innerHTML=parseFloat(pm).toFixed(2);
-  document.getElementById("i1").innerHTML=interes[0];
-  document.getElementById("a1").innerHTML=amortizacion[0];
+  document.getElementById("i1").innerHTML=parseFloat(interes[1]).toFixed(2);
+  document.getElementById("a1").innerHTML=parseFloat(amortizacion[1]).toFixed(2);
+  document.getElementById("s1").innerHTML=parseFloat(saldo[1]).toFixed(2);
+
+  document.getElementById("p2").innerHTML=parseFloat(pm).toFixed(2);
+  document.getElementById("i2").innerHTML=parseFloat(interes[2]).toFixed(2); 
+  document.getElementById("a2").innerHTML=parseFloat(amortizacion[2]).toFixed(2);
+  document.getElementById("s2").innerHTML=parseFloat(saldo[2]).toFixed(2);
+
+  document.getElementById("p3").innerHTML=parseFloat(pm).toFixed(2);
+  document.getElementById("i3").innerHTML=parseFloat(interes[3]).toFixed(2);
+  document.getElementById("a3").innerHTML=parseFloat(amortizacion[3]).toFixed(2);
+  document.getElementById("s3").innerHTML=parseFloat(saldo[3]).toFixed(2);
+
+  document.getElementById("p4").innerHTML=parseFloat(pm).toFixed(2);
+  document.getElementById("i4").innerHTML=parseFloat(interes[4]).toFixed(2);
+  document.getElementById("a4").innerHTML=parseFloat(amortizacion[4]).toFixed(2);
+  document.getElementById("s4").innerHTML=parseFloat(saldo[4]).toFixed(2);
+
+  document.getElementById("p5").innerHTML=parseFloat(pm).toFixed(2);
+  document.getElementById("i5").innerHTML=parseFloat(interes[5]).toFixed(2);
+  document.getElementById("a5").innerHTML=parseFloat(amortizacion[5]).toFixed(2);
+  document.getElementById("s5").innerHTML=parseFloat(saldo[5]).toFixed(2);
+
+  document.getElementById("p6").innerHTML=parseFloat(pm).toFixed(2);
+  document.getElementById("i6").innerHTML=parseFloat(interes[6]).toFixed(2);
+  document.getElementById("a6").innerHTML=parseFloat(amortizacion[6]).toFixed(2);
+  document.getElementById("s6").innerHTML=parseFloat(saldo[6]).toFixed(2);
+
+  document.getElementById("p7").innerHTML=parseFloat(pm).toFixed(2);
+  document.getElementById("i7").innerHTML=parseFloat(interes[7]).toFixed(2);
+  document.getElementById("a7").innerHTML=parseFloat(amortizacion[7]).toFixed(2);
+  document.getElementById("s7").innerHTML=parseFloat(saldo[7]).toFixed(2);
+
+  document.getElementById("p8").innerHTML=parseFloat(pm).toFixed(2);
+  document.getElementById("i8").innerHTML=parseFloat(interes[8]).toFixed(2);
+  document.getElementById("a8").innerHTML=parseFloat(amortizacion[8]).toFixed(2);
+  document.getElementById("s8").innerHTML=parseFloat(saldo[8]).toFixed(2);
 
 
 
